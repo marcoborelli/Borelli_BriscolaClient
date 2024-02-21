@@ -44,7 +44,8 @@ namespace Borelli_BriscolaClient.view {
                 }
                 if (IsUsernameOk) {
                     if (command == "reg:state=start") {
-                        //TODO
+                        Game fGame = new Game(PlayerName);
+                        fGame.Show();
                     } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
                         ShowInfoTableInListView(command);
                     }
