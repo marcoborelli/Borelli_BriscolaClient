@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Borelli_BriscolaClient.view;
 
 namespace Borelli_BriscolaClient {
     internal static class Program {
