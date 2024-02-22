@@ -15,7 +15,6 @@ namespace Borelli_BriscolaClient.view {
             Hand.AddRange(new Button[] { bCard1, bCard2, bCard3 });
 
             Hand.ForEach(x => x.MouseClick += BCard_MouseClick);
-            Hand.ForEach(x => x.BackgroundImageLayout = ImageLayout.Zoom);
 
             PlayerName = playerName;
 
@@ -30,13 +29,12 @@ namespace Borelli_BriscolaClient.view {
         }
 
         private void GetNewCommand(string command) {
-            //MessageBox.Show("Sono dentro");
             this.Invoke(new MethodInvoker(delegate {
                 lDebug.Text = $"{DateTime.Now}: '{command}'";
                 if (Regex.IsMatch(command, @"^play:briscola=\w+_\w+$")) {
                     lBriscola.Text = command.Split('=')[1];
                 } else if (Regex.IsMatch(command, @"^play:cardDrawed=\w+_\w+$")) {
-                    GiveToFreeButtonCard(command.Split('=')[1]);
+                    GiveToFreeHandButtonCard(command.Split('=')[1]);
                 } else if (Regex.IsMatch(command, @"^play:turn=\w+$")) {
                     Hand.ForEach(x => x.Enabled = (command.Split('=')[1] == PlayerName));
                 } else if (Regex.IsMatch(command, @"^play:cardPlayed=(\w+_\w+);player=\w+$")) {
@@ -53,7 +51,7 @@ namespace Borelli_BriscolaClient.view {
             return;
         }
 
-        private void GiveToFreeButtonCard(string nameCard) {
+        private void GiveToFreeHandButtonCard(string nameCard) {
             Button free = Hand.First(x => !x.Visible);
 
             if (free == null) {
