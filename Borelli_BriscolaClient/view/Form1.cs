@@ -39,6 +39,9 @@ namespace Borelli_BriscolaClient.view {
                     MessageBox.Show("Esiste già un utente con questo username nella stanza");
                 } else if (command == "reg:state=start") {
                     Game fGame = new Game(PlayerName);
+                    fGame.FormClosed += ResetValue;
+
+                    this.Visible = false;
                     fGame.Show();
                 } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
                     bUpdateList.Visible = false;
@@ -149,6 +152,12 @@ namespace Borelli_BriscolaClient.view {
             //reg:table=<id>
             Utilities.Instance.WriteLineStream($"reg:table={roomId}");
             Utilities.Instance.WriteLineStream($"reg:username={username}");
+        }
+
+        private void ResetValue(object sender, FormClosedEventArgs e) {
+            this.Visible = true;
+            Utilities.ChangeDelegatedFunction(GetNewCommand);
+            bUpdateList_Click(null, null);
         }
     }
 }
