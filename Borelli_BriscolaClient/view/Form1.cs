@@ -41,6 +41,7 @@ namespace Borelli_BriscolaClient.view {
                     Game fGame = new Game(PlayerName);
                     fGame.Show();
                 } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
+                    bUpdateList.Visible = false;
                     ShowInfoTableInListView(command);
                 } else if (command == "reg:addTableRes=error") {
                     MessageBox.Show("Errore nella creazione del tavolo: controllare che il numero di partecipanti sia valido e che il nome della stanza sia unico");
@@ -124,6 +125,10 @@ namespace Borelli_BriscolaClient.view {
 
             PlayerName = tbName.Text.Trim();
             JoinRoom(PlayerName, lvTables.SelectedItems[0].SubItems[0].Text);
+        }
+
+        private void bUpdateList_Click(object sender, EventArgs e) {
+            Utilities.Instance.WriteLineStream("preReg:update");
         }
 
         private void ResetListView() {

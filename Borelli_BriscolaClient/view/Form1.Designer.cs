@@ -32,6 +32,7 @@
             this.tbRoomName = new System.Windows.Forms.TextBox();
             this.cbRoomNum = new System.Windows.Forms.ComboBox();
             this.bCreateRoom = new System.Windows.Forms.Button();
+            this.bUpdateList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -118,11 +119,22 @@
             this.bCreateRoom.UseVisualStyleBackColor = true;
             this.bCreateRoom.Click += new System.EventHandler(this.bCreateRoom_Click);
             // 
+            // bUpdateList
+            // 
+            this.bUpdateList.Location = new System.Drawing.Point(235, 4);
+            this.bUpdateList.Name = "bUpdateList";
+            this.bUpdateList.Size = new System.Drawing.Size(46, 23);
+            this.bUpdateList.TabIndex = 9;
+            this.bUpdateList.Text = "UPD";
+            this.bUpdateList.UseVisualStyleBackColor = true;
+            this.bUpdateList.Click += new System.EventHandler(this.bUpdateList_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 495);
+            this.Controls.Add(this.bUpdateList);
             this.Controls.Add(this.bCreateRoom);
             this.Controls.Add(this.cbRoomNum);
             this.Controls.Add(this.tbRoomName);
@@ -152,6 +164,7 @@
         private System.Windows.Forms.TextBox tbRoomName;
         private System.Windows.Forms.ComboBox cbRoomNum;
         private System.Windows.Forms.Button bCreateRoom;
+        private System.Windows.Forms.Button bUpdateList;
     }
 }
 
