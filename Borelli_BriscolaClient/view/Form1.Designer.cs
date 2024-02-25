@@ -35,6 +35,7 @@
             this.bUpdateList = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bJoinRoom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(178, 390);
+            this.tbName.Location = new System.Drawing.Point(126, 390);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 20);
             this.tbName.TabIndex = 2;
@@ -136,6 +137,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.bJoinRoom);
             this.panel1.Controls.Add(this.lvTables);
             this.panel1.Controls.Add(this.bUpdateList);
             this.panel1.Controls.Add(this.labelInfo);
@@ -157,6 +159,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(290, 50);
             this.panel2.TabIndex = 11;
+            // 
+            // bJoinRoom
+            // 
+            this.bJoinRoom.Location = new System.Drawing.Point(232, 390);
+            this.bJoinRoom.Name = "bJoinRoom";
+            this.bJoinRoom.Size = new System.Drawing.Size(46, 23);
+            this.bJoinRoom.TabIndex = 10;
+            this.bJoinRoom.Text = "JOIN";
+            this.bJoinRoom.UseVisualStyleBackColor = true;
+            this.bJoinRoom.Click += new System.EventHandler(this.bJoinRoom_Click);
             // 
             // Form1
             // 
@@ -193,6 +205,7 @@
         private System.Windows.Forms.Button bUpdateList;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button bJoinRoom;
     }
 }
 

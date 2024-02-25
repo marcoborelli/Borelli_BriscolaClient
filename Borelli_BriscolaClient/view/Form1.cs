@@ -127,6 +127,10 @@ namespace Borelli_BriscolaClient.view {
             JoinRoom(PlayerName, lvTables.SelectedItems[0].SubItems[0].Text);
         }
 
+        private void bJoinRoom_Click(object sender, EventArgs e) {
+            lvTables_MouseDoubleClick(null, null);
+        }
+
         private void bUpdateList_Click(object sender, EventArgs e) {
             Utilities.Instance.WriteLineStream("preReg:update");
         }
