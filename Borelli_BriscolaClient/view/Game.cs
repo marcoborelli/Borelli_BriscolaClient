@@ -71,7 +71,7 @@ namespace Borelli_BriscolaClient.view {
                     if (remCard > 0) {
                         lRemCard.Text = $"{remCard}";
                     } else {
-                        lRemCard.Visible = bCardBack.Visible = bCardBriscola.Visible = false;
+                        lRemCard.Visible = bCardBack.Visible = bCardBriscola.Visible = lBriscola.Visible = false;
                     }
                 } else if (Regex.IsMatch(command, @"^play:points=([0-9]+)$")) {
                     byte punti = byte.Parse(command.Split('=')[1]);
