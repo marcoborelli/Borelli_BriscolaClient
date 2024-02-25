@@ -44,9 +44,9 @@
             // 
             this.bCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCard3.Enabled = false;
-            this.bCard3.Location = new System.Drawing.Point(409, 553);
+            this.bCard3.Location = new System.Drawing.Point(409, 519);
             this.bCard3.Name = "bCard3";
-            this.bCard3.Size = new System.Drawing.Size(98, 154);
+            this.bCard3.Size = new System.Drawing.Size(88, 144);
             this.bCard3.TabIndex = 1;
             this.bCard3.UseVisualStyleBackColor = true;
             this.bCard3.Visible = false;
@@ -55,9 +55,9 @@
             // 
             this.bCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCard1.Enabled = false;
-            this.bCard1.Location = new System.Drawing.Point(201, 553);
+            this.bCard1.Location = new System.Drawing.Point(201, 519);
             this.bCard1.Name = "bCard1";
-            this.bCard1.Size = new System.Drawing.Size(98, 154);
+            this.bCard1.Size = new System.Drawing.Size(88, 144);
             this.bCard1.TabIndex = 2;
             this.bCard1.UseVisualStyleBackColor = true;
             this.bCard1.Visible = false;
@@ -66,9 +66,9 @@
             // 
             this.bCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCard2.Enabled = false;
-            this.bCard2.Location = new System.Drawing.Point(305, 553);
+            this.bCard2.Location = new System.Drawing.Point(305, 519);
             this.bCard2.Name = "bCard2";
-            this.bCard2.Size = new System.Drawing.Size(98, 154);
+            this.bCard2.Size = new System.Drawing.Size(88, 144);
             this.bCard2.TabIndex = 3;
             this.bCard2.UseVisualStyleBackColor = true;
             this.bCard2.Visible = false;
@@ -76,20 +76,20 @@
             // lDebug
             // 
             this.lDebug.AutoSize = true;
-            this.lDebug.Location = new System.Drawing.Point(12, 9);
+            this.lDebug.Location = new System.Drawing.Point(12, 670);
             this.lDebug.Name = "lDebug";
-            this.lDebug.Size = new System.Drawing.Size(35, 13);
+            this.lDebug.Size = new System.Drawing.Size(37, 13);
             this.lDebug.TabIndex = 4;
-            this.lDebug.Text = "label1";
+            this.lDebug.Text = "debug";
             // 
             // lBriscola
             // 
             this.lBriscola.AutoSize = true;
-            this.lBriscola.Location = new System.Drawing.Point(12, 694);
+            this.lBriscola.Location = new System.Drawing.Point(496, 24);
             this.lBriscola.Name = "lBriscola";
-            this.lBriscola.Size = new System.Drawing.Size(35, 13);
+            this.lBriscola.Size = new System.Drawing.Size(43, 13);
             this.lBriscola.TabIndex = 5;
-            this.lBriscola.Text = "label2";
+            this.lBriscola.Text = "briscola";
             // 
             // bCardPlayedP3
             // 
@@ -97,7 +97,7 @@
             this.bCardPlayedP3.Enabled = false;
             this.bCardPlayedP3.Location = new System.Drawing.Point(40, 222);
             this.bCardPlayedP3.Name = "bCardPlayedP3";
-            this.bCardPlayedP3.Size = new System.Drawing.Size(154, 98);
+            this.bCardPlayedP3.Size = new System.Drawing.Size(144, 88);
             this.bCardPlayedP3.TabIndex = 6;
             this.bCardPlayedP3.UseVisualStyleBackColor = true;
             this.bCardPlayedP3.Visible = false;
@@ -106,9 +106,9 @@
             // 
             this.bCardPlayedP4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCardPlayedP4.Enabled = false;
-            this.bCardPlayedP4.Location = new System.Drawing.Point(519, 222);
+            this.bCardPlayedP4.Location = new System.Drawing.Point(509, 222);
             this.bCardPlayedP4.Name = "bCardPlayedP4";
-            this.bCardPlayedP4.Size = new System.Drawing.Size(154, 98);
+            this.bCardPlayedP4.Size = new System.Drawing.Size(144, 88);
             this.bCardPlayedP4.TabIndex = 7;
             this.bCardPlayedP4.UseVisualStyleBackColor = true;
             this.bCardPlayedP4.Visible = false;
@@ -117,9 +117,9 @@
             // 
             this.bCardPlayedP1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCardPlayedP1.Enabled = false;
-            this.bCardPlayedP1.Location = new System.Drawing.Point(305, 358);
+            this.bCardPlayedP1.Location = new System.Drawing.Point(305, 341);
             this.bCardPlayedP1.Name = "bCardPlayedP1";
-            this.bCardPlayedP1.Size = new System.Drawing.Size(98, 154);
+            this.bCardPlayedP1.Size = new System.Drawing.Size(88, 144);
             this.bCardPlayedP1.TabIndex = 8;
             this.bCardPlayedP1.UseVisualStyleBackColor = true;
             this.bCardPlayedP1.Visible = false;
@@ -130,7 +130,7 @@
             this.bCardPlayedP2.Enabled = false;
             this.bCardPlayedP2.Location = new System.Drawing.Point(305, 30);
             this.bCardPlayedP2.Name = "bCardPlayedP2";
-            this.bCardPlayedP2.Size = new System.Drawing.Size(98, 154);
+            this.bCardPlayedP2.Size = new System.Drawing.Size(88, 144);
             this.bCardPlayedP2.TabIndex = 9;
             this.bCardPlayedP2.UseVisualStyleBackColor = true;
             this.bCardPlayedP2.Visible = false;
@@ -139,9 +139,9 @@
             // 
             this.bCardBriscola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCardBriscola.Enabled = false;
-            this.bCardBriscola.Location = new System.Drawing.Point(509, 40);
+            this.bCardBriscola.Location = new System.Drawing.Point(499, 40);
             this.bCardBriscola.Name = "bCardBriscola";
-            this.bCardBriscola.Size = new System.Drawing.Size(154, 98);
+            this.bCardBriscola.Size = new System.Drawing.Size(144, 88);
             this.bCardBriscola.TabIndex = 10;
             this.bCardBriscola.UseVisualStyleBackColor = true;
             // 
@@ -149,9 +149,9 @@
             // 
             this.bCardBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCardBack.Enabled = false;
-            this.bCardBack.Location = new System.Drawing.Point(591, 12);
+            this.bCardBack.Location = new System.Drawing.Point(581, 12);
             this.bCardBack.Name = "bCardBack";
-            this.bCardBack.Size = new System.Drawing.Size(98, 154);
+            this.bCardBack.Size = new System.Drawing.Size(88, 144);
             this.bCardBack.TabIndex = 11;
             this.bCardBack.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +177,7 @@
             // lPlayer4
             // 
             this.lPlayer4.AutoSize = true;
-            this.lPlayer4.Location = new System.Drawing.Point(675, 222);
+            this.lPlayer4.Location = new System.Drawing.Point(665, 222);
             this.lPlayer4.Name = "lPlayer4";
             this.lPlayer4.Size = new System.Drawing.Size(42, 13);
             this.lPlayer4.TabIndex = 14;
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 716);
+            this.ClientSize = new System.Drawing.Size(712, 691);
             this.Controls.Add(this.lRemCard);
             this.Controls.Add(this.lPlayer4);
             this.Controls.Add(this.lPlayer3);
