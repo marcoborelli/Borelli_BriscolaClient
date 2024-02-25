@@ -43,6 +43,7 @@
             // bCard3
             // 
             this.bCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bCard3.Enabled = false;
             this.bCard3.Location = new System.Drawing.Point(409, 553);
             this.bCard3.Name = "bCard3";
             this.bCard3.Size = new System.Drawing.Size(98, 154);
@@ -53,6 +54,7 @@
             // bCard1
             // 
             this.bCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bCard1.Enabled = false;
             this.bCard1.Location = new System.Drawing.Point(201, 553);
             this.bCard1.Name = "bCard1";
             this.bCard1.Size = new System.Drawing.Size(98, 154);
@@ -63,6 +65,7 @@
             // bCard2
             // 
             this.bCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bCard2.Enabled = false;
             this.bCard2.Location = new System.Drawing.Point(305, 553);
             this.bCard2.Name = "bCard2";
             this.bCard2.Size = new System.Drawing.Size(98, 154);

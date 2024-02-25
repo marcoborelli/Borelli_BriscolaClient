@@ -36,6 +36,8 @@ namespace Borelli_BriscolaClient.view {
 
             btn.Visible = false;
 
+            Hand.ForEach(x => x.Enabled = true); //si impedisce di giocare altre carte
+
             bCardPlayedP1.BackgroundImage = btn.BackgroundImage;
             bCardPlayedP1.Visible = true;
         }
