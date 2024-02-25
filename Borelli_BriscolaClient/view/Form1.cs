@@ -13,8 +13,6 @@ namespace Borelli_BriscolaClient.view {
         private string Ip { get; set; } = "192.168.1.114";
         private short Port { get; set; } = 5000;
 
-
-        private bool IsUsernameOk = false;
         private string PlayerName { get; set; }
 
         public Form1() {
@@ -29,26 +27,20 @@ namespace Borelli_BriscolaClient.view {
 
         private void GetNewCommand(string command) {
             this.Invoke(new MethodInvoker(delegate {
-                labelDebug.Text = $"{DateTime.Now}: {command}\n";
+                labelDebug.Text = $"'{command}'";
 
                 if (Regex.IsMatch(command, @"^preReg:(\w+,\w+,\w+;)+$")) {
-                    labelDebug.Text=$"Entrato in preReg\n{command}";
 
                     ShowAllTablesInListView(command);
                 }
 
-                if (command == "reg:res=ok") {
-                    IsUsernameOk = true;
-                } else if (command == "reg:res=error") {
+                if (command == "reg:addUserRes=error") {
                     MessageBox.Show("Esiste già un utente con questo username nella stanza");
-                }
-                if (IsUsernameOk) {
-                    if (command == "reg:state=start") {
-                        Game fGame = new Game(PlayerName);
-                        fGame.Show();
-                    } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
-                        ShowInfoTableInListView(command);
-                    }
+                } else if (command == "reg:state=start") {
+                    Game fGame = new Game(PlayerName);
+                    fGame.Show();
+                } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
+                    ShowInfoTableInListView(command);
                 }
             }));
             return;
