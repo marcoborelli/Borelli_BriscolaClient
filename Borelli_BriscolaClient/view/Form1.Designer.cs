@@ -28,6 +28,10 @@
             this.lvTables = new System.Windows.Forms.ListView();
             this.labelInfo = new System.Windows.Forms.Label();
             this.labelDebug = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbRoomName = new System.Windows.Forms.TextBox();
+            this.cbRoomNum = new System.Windows.Forms.ComboBox();
+            this.bCreateRoom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -70,17 +74,59 @@
             // labelDebug
             // 
             this.labelDebug.AutoSize = true;
-            this.labelDebug.Location = new System.Drawing.Point(12, 425);
+            this.labelDebug.Location = new System.Drawing.Point(9, 473);
             this.labelDebug.Name = "labelDebug";
-            this.labelDebug.Size = new System.Drawing.Size(42, 13);
+            this.labelDebug.Size = new System.Drawing.Size(37, 13);
             this.labelDebug.TabIndex = 3;
-            this.labelDebug.Text = "NOME:";
+            this.labelDebug.Text = "debug";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 421);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "CREA LA TUA STANZA";
+            // 
+            // tbRoomName
+            // 
+            this.tbRoomName.Location = new System.Drawing.Point(15, 437);
+            this.tbRoomName.Name = "tbRoomName";
+            this.tbRoomName.Size = new System.Drawing.Size(170, 20);
+            this.tbRoomName.TabIndex = 6;
+            // 
+            // cbRoomNum
+            // 
+            this.cbRoomNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRoomNum.FormattingEnabled = true;
+            this.cbRoomNum.Items.AddRange(new object[] {
+            "2",
+            "4"});
+            this.cbRoomNum.Location = new System.Drawing.Point(191, 437);
+            this.cbRoomNum.Name = "cbRoomNum";
+            this.cbRoomNum.Size = new System.Drawing.Size(59, 21);
+            this.cbRoomNum.TabIndex = 7;
+            // 
+            // bCreateRoom
+            // 
+            this.bCreateRoom.Location = new System.Drawing.Point(256, 435);
+            this.bCreateRoom.Name = "bCreateRoom";
+            this.bCreateRoom.Size = new System.Drawing.Size(25, 22);
+            this.bCreateRoom.TabIndex = 8;
+            this.bCreateRoom.Text = "+";
+            this.bCreateRoom.UseVisualStyleBackColor = true;
+            this.bCreateRoom.Click += new System.EventHandler(this.bCreateRoom_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 495);
+            this.Controls.Add(this.bCreateRoom);
+            this.Controls.Add(this.cbRoomNum);
+            this.Controls.Add(this.tbRoomName);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelDebug);
             this.Controls.Add(this.tbName);
@@ -102,6 +148,10 @@
         private System.Windows.Forms.ListView lvTables;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Label labelDebug;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbRoomName;
+        private System.Windows.Forms.ComboBox cbRoomNum;
+        private System.Windows.Forms.Button bCreateRoom;
     }
 }
 

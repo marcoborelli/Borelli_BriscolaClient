@@ -17,8 +17,10 @@ namespace Borelli_BriscolaClient.view {
 
         public Form1() {
             InitializeComponent();
-            labelInfo.Text = $"Connesso al socket {Ip}:{Port}";
+            labelInfo.Text = $"{Ip}:{Port}";
             Client = new TcpClient(Ip, Port);
+
+            cbRoomNum.SelectedIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -30,7 +32,6 @@ namespace Borelli_BriscolaClient.view {
                 labelDebug.Text = $"'{command}'";
 
                 if (Regex.IsMatch(command, @"^preReg:(\w+,\w+,\w+;)+$")) {
-
                     ShowAllTablesInListView(command);
                 }
 
@@ -41,6 +42,14 @@ namespace Borelli_BriscolaClient.view {
                     fGame.Show();
                 } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
                     ShowInfoTableInListView(command);
+                } else if (command == "reg:addTableRes=error") {
+                    MessageBox.Show("Errore nella creazione del tavolo: controllare che il numero di partecipanti sia valido e che il nome della stanza sia unico");
+                } else if (command == "reg:addTableRes=ok") {
+                    PlayerName = tbName.Text.Trim();
+                    JoinRoom(PlayerName, tbRoomName.Text); //se un utente crea una stanza viene automaticamente aggiunto
+
+                    tbRoomName.Text = String.Empty; //reset dei dati
+                    cbRoomNum.SelectedIndex = 0;
                 }
             }));
             return;
@@ -87,6 +96,20 @@ namespace Borelli_BriscolaClient.view {
             }
 
             lvTables.Refresh();
+        }
+
+        private void bCreateRoom_Click(object sender, EventArgs e) {
+            if (String.IsNullOrWhiteSpace(tbRoomName.Text) || String.IsNullOrWhiteSpace(cbRoomNum.Text)) {
+                MessageBox.Show("Inserire prima dei valori validi per creare una stanza");
+                return;
+            }
+
+            if (String.IsNullOrEmpty(tbName.Text)) {
+                MessageBox.Show("Inserire prima uno username");
+                return;
+            }
+
+            Utilities.Instance.WriteLineStream($"reg:createTable={tbRoomName.Text};numPart={cbRoomNum.Text}");
         }
 
         private void lvTables_MouseDoubleClick(object sender, MouseEventArgs e) {
