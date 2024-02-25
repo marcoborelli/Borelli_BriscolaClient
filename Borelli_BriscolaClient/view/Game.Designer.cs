@@ -38,6 +38,7 @@
             this.lPlayer3 = new System.Windows.Forms.Label();
             this.lPlayer4 = new System.Windows.Forms.Label();
             this.lRemCard = new System.Windows.Forms.Label();
+            this.lPoints = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bCard3
@@ -193,11 +194,21 @@
             this.lRemCard.TabIndex = 15;
             this.lRemCard.Text = "label1";
             // 
+            // lPoints
+            // 
+            this.lPoints.AutoSize = true;
+            this.lPoints.Location = new System.Drawing.Point(506, 624);
+            this.lPoints.Name = "lPoints";
+            this.lPoints.Size = new System.Drawing.Size(52, 13);
+            this.lPoints.TabIndex = 16;
+            this.lPoints.Text = "PUNTI: 0";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 691);
+            this.Controls.Add(this.lPoints);
             this.Controls.Add(this.lRemCard);
             this.Controls.Add(this.lPlayer4);
             this.Controls.Add(this.lPlayer3);
@@ -237,5 +248,6 @@
         private System.Windows.Forms.Label lPlayer3;
         private System.Windows.Forms.Label lPlayer4;
         private System.Windows.Forms.Label lRemCard;
+        private System.Windows.Forms.Label lPoints;
     }
 }
