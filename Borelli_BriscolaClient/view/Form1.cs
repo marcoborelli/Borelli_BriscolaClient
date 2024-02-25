@@ -100,10 +100,7 @@ namespace Borelli_BriscolaClient.view {
             }
 
             PlayerName = tbName.Text.Trim();
-
-            //reg:table=<id>
-            Utilities.Instance.WriteLineStream($"reg:table={lvTables.SelectedItems[0].SubItems[0].Text}");
-            Utilities.Instance.WriteLineStream($"reg:username={PlayerName}");
+            JoinRoom(PlayerName, lvTables.SelectedItems[0].SubItems[0].Text);
         }
 
         private void ResetListView() {
@@ -114,6 +111,12 @@ namespace Borelli_BriscolaClient.view {
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             Utilities.Instance.WriteLineStream("chiudi");
+        }
+
+        private void JoinRoom(string username, string roomId) {
+            //reg:table=<id>
+            Utilities.Instance.WriteLineStream($"reg:table={roomId}");
+            Utilities.Instance.WriteLineStream($"reg:username={username}");
         }
     }
 }
