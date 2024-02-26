@@ -3,20 +3,23 @@ using System.Net.Sockets;
 using System.Windows.Forms;
 using Borelli_BriscolaClient.controller;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Borelli_BriscolaClient.view {
     public partial class Form1 : Form {
         private TcpClient Client { get; set; }
 
 
-        //TODO: salvare in un file di testo a parte
-        private string Ip { get; set; } = "192.168.1.114";
-        private short Port { get; set; } = 5000;
+        private string Ip { get; set; }
+        private short Port { get; set; }
 
         private string PlayerName { get; set; }
 
         public Form1() {
             InitializeComponent();
+
+            InitIpAndPort();
+
             labelInfo.Text = $"{Ip}:{Port}";
             Client = new TcpClient(Ip, Port);
 
@@ -39,6 +42,7 @@ namespace Borelli_BriscolaClient.view {
                     MessageBox.Show("Esiste già un utente con questo username nella stanza");
                 } else if (command == "reg:state=start") {
                     Game fGame = new Game(PlayerName);
+
                     fGame.FormClosed += ResetValue;
 
                     this.Visible = false;
@@ -158,6 +162,21 @@ namespace Borelli_BriscolaClient.view {
             this.Visible = true;
             Utilities.ChangeDelegatedFunction(GetNewCommand);
             bUpdateList_Click(null, null);
+        }
+
+        private void InitIpAndPort() {
+            if (!File.Exists("conf")) {
+                using (StreamWriter write = new StreamWriter("conf")) {
+                    write.WriteLine("127.0.0.1;5000");
+                }
+            }
+
+            using (StreamReader read = new StreamReader("conf")) {
+                string[] fields = read.ReadLine().Split(';');
+
+                Ip = fields[0];
+                Port = short.Parse(fields[1]);
+            }
         }
     }
 }
