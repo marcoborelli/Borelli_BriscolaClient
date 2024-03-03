@@ -36,7 +36,7 @@ namespace Borelli_BriscolaClient.view {
 
             btn.Visible = false;
 
-            Hand.ForEach(x => x.Enabled = true); //si impedisce di giocare altre carte
+            Hand.ForEach(x => x.Enabled = false); //si impedisce di giocare altre carte
 
             bCardPlayedP1.BackgroundImage = btn.BackgroundImage;
             bCardPlayedP1.Visible = true;
@@ -51,6 +51,7 @@ namespace Borelli_BriscolaClient.view {
                 } else if (Regex.IsMatch(command, @"^play:briscola=\w+_\w+$")) {
                     string briscola = command.Split('=')[1];
 
+                    lRemCard.Visible = bCardBack.Visible = bCardBriscola.Visible = lBriscola.Visible = true;
                     lBriscola.Text = briscola;
                     bCardBriscola.BackgroundImage = GetRotatedImage($"../../../images/{briscola}.jpg");
                 } else if (Regex.IsMatch(command, @"^play:cardDrawed=\w+_\w+$")) {
@@ -82,6 +83,8 @@ namespace Borelli_BriscolaClient.view {
                     List<string> winners = command.Split('=')[1].Split(';').ToList();
 
                     MessageBox.Show(winners.Contains(PlayerName) ? "Hai vinto" : "Hai perso");
+                } else if (command == "end:closeForm") {
+                    this.Close();
                 }
             }));
             return;

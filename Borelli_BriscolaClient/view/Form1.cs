@@ -14,6 +14,7 @@ namespace Borelli_BriscolaClient.view {
         private short Port { get; set; }
 
         private string PlayerName { get; set; }
+        Game fGame;
 
         public Form1() {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace Borelli_BriscolaClient.view {
                 if (command == "reg:addUserRes=error") {
                     MessageBox.Show("Esiste già un utente con questo username nella stanza");
                 } else if (command == "reg:state=start") {
-                    Game fGame = new Game(PlayerName);
+                    fGame = new Game(PlayerName);
 
                     fGame.FormClosed += ResetValue;
 
