@@ -12,6 +12,7 @@ namespace Borelli_BriscolaClient.view {
         List<Button> OtherPlayers = new List<Button>();
 
         private string PlayerName { get; set; }
+        public bool PlayAgain { get; private set; }
         public Game(string playerName) {
             InitializeComponent();
             Hand.AddRange(new Button[] { bCard1, bCard2, bCard3 });
@@ -83,6 +84,10 @@ namespace Borelli_BriscolaClient.view {
                     List<string> winners = command.Split('=')[1].Split(';').ToList();
 
                     MessageBox.Show(winners.Contains(PlayerName) ? "Hai vinto" : "Hai perso");
+
+                    DialogResult result = MessageBox.Show("Desideri giocare ancora?", "CONFERMA", MessageBoxButtons.YesNo);
+                    PlayAgain = (result == DialogResult.Yes);
+                    Utilities.Instance.WriteLineStream($"end:playAgain={PlayAgain}");
                 } else if (command == "end:closeForm") {
                     this.Close();
                 }

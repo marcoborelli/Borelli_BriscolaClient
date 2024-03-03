@@ -162,7 +162,11 @@ namespace Borelli_BriscolaClient.view {
         private void ResetValue(object sender, FormClosedEventArgs e) {
             this.Visible = true;
             Utilities.ChangeDelegatedFunction(GetNewCommand);
-            bUpdateList_Click(null, null);
+
+            if (!fGame.PlayAgain) {
+                bUpdateList.Visible = true;
+                bUpdateList_Click(null, null);
+            }
         }
 
         private void InitIpAndPort() {
