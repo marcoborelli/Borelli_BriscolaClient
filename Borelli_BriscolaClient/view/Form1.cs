@@ -22,7 +22,13 @@ namespace Borelli_BriscolaClient.view {
             InitIpAndPort();
 
             labelInfo.Text = $"{Ip}:{Port}";
-            Client = new TcpClient(Ip, Port);
+
+            try {
+                Client = new TcpClient(Ip, Port);
+            } catch {
+                MessageBox.Show($"Non è stato possibile connettersi all'host '{Ip}' sulla porta '{Port}'");
+                Environment.Exit(1);
+            }
 
             cbRoomNum.SelectedIndex = 0;
         }
