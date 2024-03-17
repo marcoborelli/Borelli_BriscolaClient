@@ -78,6 +78,11 @@ namespace Borelli_BriscolaClient.view {
                 } else if (Regex.IsMatch(command, @"^play:points=([0-9]+)$")) {
                     byte punti = byte.Parse(command.Split('=')[1]);
                     lPoints.Text = $"PUNTI: {punti}";
+                } else if (command == "play:error") {
+                    MessageBox.Show("C'è stato un errore imprevisto sul server. Sarai disconnesso dalla stanza");
+
+                    PlayAgain = false;
+                    this.Close();
                 }
 
                 if (Regex.IsMatch(command, @"^end:winner=(\w+;)+$")) {
