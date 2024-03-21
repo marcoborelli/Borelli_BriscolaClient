@@ -69,6 +69,12 @@ namespace Borelli_BriscolaClient.view {
 
                     tbRoomName.Text = String.Empty; //reset dei dati
                     cbRoomNum.SelectedIndex = 0;
+                } else if (command == "reg:error") {
+                    MessageBox.Show("C'è stato un errore durante la creazione del tavolo");
+
+                    IsInRoom = false;
+                    bUpdateList.Visible = true; //indifferentemente che fosse gia' attivo o no lo riattivo e aggiorno la lista dei tavoli
+                    bUpdateList_Click(null, null);
                 }
             }));
             return;
