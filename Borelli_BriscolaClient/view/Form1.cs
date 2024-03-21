@@ -12,6 +12,7 @@ namespace Borelli_BriscolaClient.view {
 
         private string Ip { get; set; }
         private short Port { get; set; }
+        private bool IsInRoom { get; set; }
 
         private string PlayerName { get; set; }
         Game fGame;
@@ -31,6 +32,7 @@ namespace Borelli_BriscolaClient.view {
             }
 
             cbRoomNum.SelectedIndex = 0;
+            IsInRoom = false;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -56,6 +58,8 @@ namespace Borelli_BriscolaClient.view {
                     fGame.Show();
                 } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
                     bUpdateList.Visible = false;
+                    IsInRoom = true;
+
                     ShowInfoTableInListView(command);
                 } else if (command == "reg:addTableRes=error") {
                     MessageBox.Show("Errore nella creazione del tavolo: controllare che il numero di partecipanti sia valido e che il nome della stanza sia unico");
@@ -128,6 +132,10 @@ namespace Borelli_BriscolaClient.view {
         }
 
         private void lvTables_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (IsInRoom)
+                return;
+
+
             if (lvTables.SelectedItems.Count < 1) {
                 return;
             }
@@ -170,6 +178,7 @@ namespace Borelli_BriscolaClient.view {
             Utilities.ChangeDelegatedFunction(GetNewCommand);
 
             if (!fGame.PlayAgain) {
+                IsInRoom = false;
                 bUpdateList.Visible = true;
                 bUpdateList_Click(null, null);
             }
