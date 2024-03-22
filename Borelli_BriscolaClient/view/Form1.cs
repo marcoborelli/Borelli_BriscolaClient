@@ -57,8 +57,8 @@ namespace Borelli_BriscolaClient.view {
                     this.Visible = false;
                     fGame.Show();
                 } else if (Regex.IsMatch(command, @"^reg:update=(\w+;)+$")) {
-                    bUpdateList.Visible = false;
                     IsInRoom = true;
+                    ChangeFormState();
 
                     ShowInfoTableInListView(command);
                 } else if (command == "reg:addTableRes=error") {
@@ -73,7 +73,7 @@ namespace Borelli_BriscolaClient.view {
                     MessageBox.Show("C'è stato un errore durante la creazione del tavolo");
 
                     IsInRoom = false;
-                    bUpdateList.Visible = true; //indifferentemente che fosse gia' attivo o no lo riattivo e aggiorno la lista dei tavoli
+                    ChangeFormState();
                     bUpdateList_Click(null, null);
                 }
             }));
@@ -124,6 +124,9 @@ namespace Borelli_BriscolaClient.view {
         }
 
         private void bCreateRoom_Click(object sender, EventArgs e) {
+            if (IsInRoom)
+                return;
+
             if (String.IsNullOrWhiteSpace(tbRoomName.Text) || String.IsNullOrWhiteSpace(cbRoomNum.Text)) {
                 MessageBox.Show("Inserire prima dei valori validi per creare una stanza");
                 return;
@@ -185,9 +188,13 @@ namespace Borelli_BriscolaClient.view {
 
             if (!fGame.PlayAgain) {
                 IsInRoom = false;
-                bUpdateList.Visible = true;
+                ChangeFormState();
                 bUpdateList_Click(null, null);
             }
+        }
+
+        private void ChangeFormState() {
+            panel2.Enabled = tbName.Enabled = bJoinRoom.Enabled = bUpdateList.Visible =!IsInRoom;
         }
 
         private void InitIpAndPort() {
